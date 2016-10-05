@@ -13,7 +13,12 @@
 # Run: #
 * source venv/bin/activate
 * cd src/
+<<<<<<< HEAD
 * python manage.py runserver
 
 # Run Tests: #
 * python manage.py test
+=======
+* python manage.py migrate
+* python manage.py runserver
+>>>>>>> a325194af93cb89682db4274e641be67fcdf9037

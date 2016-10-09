@@ -2,3 +2,6 @@ venv
 *.pyc
 *.sqlite3
 .idea
+.coverage
+coverage.xml
+unittests.xml

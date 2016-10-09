@@ -8,14 +8,14 @@ from rest_framework.response import Response
 
 # Create your views here.
 class TodoItemViewSet(viewsets.ModelViewSet):
-  queryset = TodoItem.objects.all()
-  serializer_class = TodoItemSerializer
+    queryset = TodoItem.objects.all()
+    serializer_class = TodoItemSerializer
 
-  def perform_create(self, serializer):
-    instance = serializer.save()
-    instance.url = reverse('todoitem_detail', args=[instance.pk], request=self.request)
-    instance.save()
+    def perform_create(self, serializer):
+        instance = serializer.save()
+        instance.url = reverse('todoitem-detail', args=[instance.pk], request=self.request)
+        instance.save()
 
-  def delete(self, request):
-    TodoItem.objects.all().delete()
-    return Response(status=status.HTTP_204_NO_CONTENT)
+    def delete(self, request):
+        TodoItem.objects.all().delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
